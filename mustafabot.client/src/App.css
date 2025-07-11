@@ -9,3 +9,81 @@ th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+.App {
+    font-family: 'Times New Roman', sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    background: #3a91c4;
+    color: papayawhip;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.chat-window {
+    flex: 1;
+    padding: 15px;
+    background: papayawhip;
+    overflow-y: auto;
+    height: 400px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 20px;
+    clear: both;
+}
+
+    .message.user {
+        background: #3a91c4;
+        color: papayawhip;
+        align-self: flex-end;
+        margin-left: auto;
+        border-bottom-right-radius: 0;
+    }
+
+.message.bot {
+    background: #808080;
+    color: black;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.input-area {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+}
+
+.input-area button {
+    background: #3a91c4;
+    color: papayawhip;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.input-area input:focus {
+    outline: none;
+}
+
+.input-area button:hover {
+    background: #0056b3;
+}

@@ -1,7 +1,5 @@
-import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
-import plugin from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
 import child_process from 'child_process';
@@ -39,7 +37,11 @@ export default defineConfig({
     plugins: [react()],
     server: {
         proxy: {
-            '/chat': 'https://localhost:7086', // Proxy to ASP.NET Core backend'
+            '/chat': {
+                target: 'https://localhost:5003', // Proxy to ASP.NET Core backend
+                changeOrigin: true,
+                secure: false, // Allow self-signed certificates
+            },
         },
     },
 });
